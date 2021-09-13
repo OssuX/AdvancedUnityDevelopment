@@ -11,7 +11,7 @@
                     "id": "b046333f-5f21-496b-a94f-c2df0663179d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -19,7 +19,7 @@
                     "name": "",
                     "id": "cb58b17e-0f24-4759-b094-c240acc982fb",
                     "path": "<Keyboard>/enter",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "Enter",
@@ -30,10 +30,37 @@
                     "name": "",
                     "id": "fd251f62-7d77-42c3-ad01-a97cfe7c4951",
                     "path": "<Keyboard>/numpadEnter",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "Enter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player",
+            "id": "da1f513c-ffa8-428f-9892-02563152af93",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "b8a2d441-bf18-4da1-a357-d0ff13140606",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2ffe23c6-ed6e-48ad-b691-7ced0051c399",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
