@@ -1,5 +1,5 @@
-Jorma the videogame
+Jarmo the videogame
 
-Jorma videopeli on hyvä peli ja paras peli
+Jarmo videopeli on hyvä peli ja paras peli
 
 Trello: https://trello.com/b/HxwCvSOg/advancedunitydevelopment
