@@ -228,6 +228,7 @@ public class BETA_SETTINGS{
         Controls.Player.Crouch.canceled += ctx => isCrouching = false;
         Controls.Player.Sprint.performed += ctx => isSprinting = true;
         Controls.Player.Sprint.canceled += ctx => isSprinting = false;
+        
 
 
         #region Look Settings - Awake
@@ -360,7 +361,7 @@ public class BETA_SETTINGS{
             }
         }
 
-        UIManager.Instance.RefreshStamina(CurrentStamina);
+//        UIManager.Instance.RefreshStamina(CurrentStamina);
 
         advanced.tooSteep = false;
         float inrSprintSpeed;
@@ -740,7 +741,7 @@ public class BETA_SETTINGS{
         }
         playerCamera.transform.localPosition = cameraStartingPosition;
     }
-
+    
     private void OnEnable()
     {
         Controls.Enable();
