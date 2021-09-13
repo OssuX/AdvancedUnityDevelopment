@@ -65,3 +65,7 @@ MonoBehaviour:
     Scene:
       sceneAsset: {fileID: 102900000, guid: 8df39e6f4216cb24dadeb0abf047ea13, type: 3}
       scenePath: Assets/Scenes/Game1.unity
+  - LevelName: TestMax
+    Scene:
+      sceneAsset: {fileID: 102900000, guid: 0074853d0eafbfa4fa806d19fd9be07a, type: 3}
+      scenePath: Assets/Scenes/TestMax.unity
