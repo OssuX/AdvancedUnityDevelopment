@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129895495175522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4288335847994348}
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 20724644957976244}
   - component: {fileID: 81419976148993170}
   - component: {fileID: 124044488792268592}
+  - component: {fileID: 801564232}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: MainCamera
@@ -76,9 +77,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -122,6 +124,38 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264833946912854}
   m_Enabled: 1
+--- !u!114 &801564232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264833946912854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1743903104223250
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,16 +329,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1a5ad4f9ffb154ca7813fdad11017a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   enableCameraMovement: 1
   rotationRange: 170
-  mouseSensitivity: 10
+  mouseSensitivity: 3
   cameraSmoothing: 5
   lockAndHideCursor: 1
   playerCamera: {fileID: 4288335847994348}
+  playerWeaponRef: {fileID: 0}
   enableCameraShake: 1
+  spineRoot: {fileID: 0}
   autoCrosshair: 1
   Crosshair: {fileID: 21300000, guid: 7fa7752f7f2a3fc4fbc2bcaea5671e2d, type: 3}
   targetAngles: {x: 0, y: 0, z: 0}
+  followAngles: {x: 0, y: 0, z: 0}
   playerCanMove: 1
   walkByDefault: 1
   walkSpeed: 4
@@ -312,16 +350,16 @@ MonoBehaviour:
   jumpPower: 5
   canHoldJump: 0
   useStamina: 0
-  staminaDepletionSpeed: 2
-  Stamina: 50
+  staminaDepletionSpeed: 0.1
+  Stamina: 100
   speed: 0
-  backgroundStamina: 0
   _crouchModifiers:
     useCrouch: 1
     CrouchInputAxis: 
-    walkSpeedWhileCrouching: 2
-    sprintSpeedWhileCrouching: 2
-    jumpPowerWhileCrouching: 0
+    crouchWalkSpeedMultiplier: 0.5
+    crouchSprintSpeedMultiplier: 0.25
+    crouchJumpPowerMultiplier: 0
+    crouchOverride: 0
   fOVKick:
     useFOVKick: 0
     FOVKickAmount: 4
@@ -352,41 +390,40 @@ MonoBehaviour:
       m_RotationOrder: 4
   advanced:
     gravityMultiplier: 1
-    zeroFrictionMaterial: {fileID: 13400000, guid: 5b53aeabfa6ff544fa3e6b450195a10c,
-      type: 2}
-    highFrictionMaterial: {fileID: 13400000, guid: 6a3496a0b3effeb4d8985e3ec72ac870,
-      type: 2}
+    zeroFrictionMaterial: {fileID: 0}
+    highFrictionMaterial: {fileID: 0}
     useSlopeDetection: 1
     maxSlopeAngle: 70
     tooSteep: 0
+  isCrouching: 0
   fps_Rigidbody: {fileID: 0}
   useHeadbob: 1
   head: {fileID: 4204582120663750}
   headbobFrequency: 1.5
-  headbobSwayAngle: 5
-  headbobHeight: 2
-  headbobSideMovement: 2
+  headbobSwayAngle: 1
+  headbobHeight: 1
+  headbobSideMovement: 0.5
   headbobSpeedMultiplier: 3
   useJumdLandMovement: 1
-  jumpAngle: 3
-  landAngle: 60
+  jumpAngle: 1
+  landAngle: 20
   Volume: 5
   jumpSound: {fileID: 0}
   landSound: {fileID: 0}
-  _useFootStepSounds: 1
+  _useFootStepSounds: 0
   footStepSounds:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   dynamicFootstep:
     useDynamicFootStepProcess: 1
-    _Wood: {fileID: 13400000, guid: ca77fab071e4fe54a96e7ba076c336bb, type: 2}
-    _metalAndGlass: {fileID: 13400000, guid: 5b53aeabfa6ff544fa3e6b450195a10c, type: 2}
-    _Grass: {fileID: 13400000, guid: 48bbde3049f29b247a56af17d2b0381f, type: 2}
-    _dirtAndGravle: {fileID: 13400000, guid: 66974829c5573b14eb6cc2af4dc77325, type: 2}
-    _rockAndConcrete: {fileID: 13400000, guid: 8b2bc5d65b8a23249ac65e6a71b72204, type: 2}
-    _Mud: {fileID: 13400000, guid: 5b53aeabfa6ff544fa3e6b450195a10c, type: 2}
-    _CustomMaterial: {fileID: 13400000, guid: 607312263e6edad4293a3fd7bb6602cf, type: 2}
+    _Wood: {fileID: 0}
+    _metalAndGlass: {fileID: 0}
+    _Grass: {fileID: 0}
+    _dirtAndGravle: {fileID: 0}
+    _rockAndConcrete: {fileID: 0}
+    _Mud: {fileID: 0}
+    _CustomMaterial: {fileID: 0}
     _woodFootsteps: []
     _metalAndGlassFootsteps: []
     _GrassFootsteps:
