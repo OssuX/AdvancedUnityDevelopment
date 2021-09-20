@@ -28,10 +28,10 @@ public class LevelManager : Singleton<LevelManager>
                 SceneManager.LoadScene(data.Scene);
                 return;
             }
-            else
+          /*  else
             {
                 Debug.Log("Skeneä (" + name + ") ei löytynyt");
-            }
+            }*/
         }
     }
 }
