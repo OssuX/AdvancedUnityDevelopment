@@ -4,12 +4,28 @@ using UnityEngine;
 
 public class LevelTime : MonoBehaviour
 {
-    private string time;
+    public float timeValue;
+    public bool updateTime = true;
+
+
+
+    private float nextTimeToFlash = 0f;
 
     void Update()
     {
+        if(updateTime)
+        {
+            timeValue = Time.time;
 
-        UIManager.Instance.UpdateTime(Time.time);
+            if(Time.time >= nextTimeToFlash)
+            {
+                UIManager.Instance.FlashText();
+                nextTimeToFlash = Time.time + 1f / 1f;
+            }
+        }
+
+        UIManager.Instance.UpdateTime(timeValue);
     }
 
+    
 }

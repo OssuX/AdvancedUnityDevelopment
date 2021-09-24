@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class LevelFinishArea : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.compar)
-        {
+    [SerializeField] private List<string> TriggerTags = new List<string>();
 
+    private LevelTime levelTimeScript;
+
+    private void Start()
+    {
+        levelTimeScript = FindObjectOfType<LevelTime>();
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (TriggerTags.Contains(collision.gameObject.tag))
+        {
+            levelTimeScript.updateTime = false;
         }
     }
 }

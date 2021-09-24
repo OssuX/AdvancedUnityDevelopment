@@ -12,6 +12,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject gameUI;
 
     [SerializeField] public TMP_Text TimeCounter;
+    public Animator textAnim;
+
 
     private string time = "testigang";
 
@@ -23,6 +25,11 @@ public class UIManager : Singleton<UIManager>
     public void ToggleUIScreen(bool value)
     {
         MainMenuScreen.SetActive(value);
+    }
+
+    public void FlashText()
+    {
+        textAnim.Play("SecondGoUp", 0, 0.0f);
     }
 
     public void RefreshUI()
