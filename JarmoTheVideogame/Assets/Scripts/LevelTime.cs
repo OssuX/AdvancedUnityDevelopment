@@ -8,19 +8,20 @@ public class LevelTime : MonoBehaviour
     public bool updateTime = true;
 
 
-
+    private float timeValueTwo;
     private float nextTimeToFlash = 0f;
 
     void Update()
     {
         if(updateTime)
         {
-            timeValue = Time.time;
+            timeValue = timeValue + Time.deltaTime;
+            timeValueTwo = timeValueTwo + Time.deltaTime;
 
-            if(Time.time >= nextTimeToFlash)
+            if(timeValueTwo >= 1)
             {
                 UIManager.Instance.FlashText();
-                nextTimeToFlash = Time.time + 1f / 1f;
+                timeValueTwo = 0;
             }
         }
 
