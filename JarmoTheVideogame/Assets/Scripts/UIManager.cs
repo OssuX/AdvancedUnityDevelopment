@@ -14,9 +14,15 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] public TMP_Text TimeCounter;
     public Animator textAnim;
 
+    [SerializeField] public TMP_Text MoneyCounter;
+    
 
     private string time = "testigang";
 
+    public void UpdateMoney(int amount)
+    {
+        MoneyCounter.text = amount.ToString();
+    }
     private void Start()
     {
         ToggleUIScreen(true);
