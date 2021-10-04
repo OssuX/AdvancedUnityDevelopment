@@ -18,6 +18,7 @@ public class LevelFinishArea : MonoBehaviour
         if (TriggerTags.Contains(collision.gameObject.tag))
         {
             levelTimeScript.updateTime = false;
+            GameManager.Instance.UpdateMoneyAmount(50);
         }
     }
 }
