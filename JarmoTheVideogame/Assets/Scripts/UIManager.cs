@@ -21,7 +21,7 @@ public class UIManager : Singleton<UIManager>
 
     public void UpdateMoney(int amount)
     {
-        MoneyCounter.text = amount.ToString();
+        MoneyCounter.text = "Rahaa: " + amount.ToString();
     }
     private void Start()
     {

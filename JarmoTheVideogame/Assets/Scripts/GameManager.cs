@@ -22,7 +22,10 @@ public class GameManager : Singleton<GameManager>
         
     }
 
-    
+    public int GetMoney()
+    {
+        return money;
+    }
 
     public GameObject player
     {
