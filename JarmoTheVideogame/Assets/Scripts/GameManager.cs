@@ -12,15 +12,20 @@ public class GameManager : Singleton<GameManager>
     
     private void Start()
     {
-        UIManager.Instance.UpdateMoney(money);
+        UpdateMoneyAmount(money);
     }
 
     public void UpdateMoneyAmount(int amount)
     {
-        UIManager.Instance.UpdateMoney(amount);
+        money = amount;
+        UIManager.Instance.UpdateMoney(money);
+        
     }
 
-    
+    public int GetMoney()
+    {
+        return money;
+    }
 
     public GameObject player
     {
