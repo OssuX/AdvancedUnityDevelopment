@@ -10,18 +10,59 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject LoadSceneScreen;
     [SerializeField] private GameObject SettingsScreen;
     [SerializeField] private GameObject gameUI;
+    [SerializeField] private GameObject buyScreen;
 
     [SerializeField] public TMP_Text TimeCounter;
     public Animator textAnim;
 
     [SerializeField] public TMP_Text MoneyCounter;
-    
+
+    private bool buyScreenActiveweapon;
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            if(!buyScreenActiveweapon)
+            {
+                ShowBuyMenu();
+            }
+            else
+            {
+                HideBuyMenu();
+            }
+
+        }
+    }
+
+    public void ShowBuyMenu()
+    {
+        buyScreen.SetActive(true);
+        buyScreenActiveweapon = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void HideBuyMenu()
+    {
+        buyScreen.SetActive(false);
+        buyScreenActiveweapon = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+
+
+
+
+
+
 
     private string time = "testigang";
 
     public void UpdateMoney(int amount)
     {
-        MoneyCounter.text = "Rahaa: " + amount.ToString();
+        MoneyCounter.text = "Rahaa: " + amount.ToString() + " | Avaa ostovalikko B-näppäimestä";
     }
     private void Start()
     {
