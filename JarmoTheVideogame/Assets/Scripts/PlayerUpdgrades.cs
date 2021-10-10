@@ -5,5 +5,6 @@ using UnityEngine;
 public class PlayerUpdgrades : MonoBehaviour
 {
     [SerializeField] private float speed;
- //   [SerializeField] private 
+    private float maxHealth; 
+    
 }
