@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class FirstPersonCharacter : MonoBehaviour
 {
 	[SerializeField] private float runSpeed = 8f;                                       // The speed at which we want the character to move
 	[SerializeField] private float strafeSpeed = 4f;                                    // The speed at which we want the character to be able to strafe
 	[SerializeField] private float jumpPower = 5f;                                      // The power behind the characters jump. increase for higher jumps
-	
+
 	[SerializeField] private AdvancedSettings advanced = new AdvancedSettings();        // The container for the advanced settings ( done this way so that the advanced setting are exposed under a foldout
 	[SerializeField] private bool lockCursor = true;
+
+	//[SerializeField] private List<UpgradeData> Upgrades = new List<UpgradeData>();
 
 	[System.Serializable]
 	public class AdvancedSettings                                                       // The advanced settings
